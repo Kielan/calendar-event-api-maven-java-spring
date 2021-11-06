@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent.models.Calendar;
+import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent.models.CalendarRepository;
+
 /*
 @RestController indicates that the data returned by each method will be written straight into the response body instead of rendering a template.
 

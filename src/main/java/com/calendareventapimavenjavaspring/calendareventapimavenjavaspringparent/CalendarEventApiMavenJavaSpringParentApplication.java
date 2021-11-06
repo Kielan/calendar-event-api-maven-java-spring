@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent.models.Calendar;
+import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent.models.CalendarRepository;
 
 @SpringBootApplication
 public class CalendarEventApiMavenJavaSpringParentApplication {
@@ -22,6 +23,13 @@ public class CalendarEventApiMavenJavaSpringParentApplication {
 	@Bean
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
+	}
+
+	@Bean
+	public CommandLineRunner init(CalendarRepository repository) {
+		return args -> {
+			repository.save(new Calendar(12345678910L, "Calendar1"));
+		};
 	}
 
 	@Bean
