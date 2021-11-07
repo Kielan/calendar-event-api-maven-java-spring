@@ -12,7 +12,7 @@ import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent
 @Component
 public class DataLoader implements CommandLineRunner {
 	//removing final should mean that log is a instance of the static method declared as final in mainapplication 
-  private static Logger log = LoggerFactory.getLogger(CommandLineRunner.class);
+  final private static Logger log = LoggerFactory.getLogger(CommandLineRunner.class);
 
 	@Autowired
 	private DataBuilder dataBuilder;
