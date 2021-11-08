@@ -16,7 +16,7 @@ import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent
 
 @Component
 public class DataBuilder {
-  /*final static private*/
+	/*final static private*/
 	ArrayList<Calendar> calendars;
 	ArrayList<CalendarEvent> calendarEvents;
 
@@ -34,7 +34,7 @@ public class DataBuilder {
 	public ArrayList<CalendarEvent> createCalendarEvent() {
 		CalendarEvent calendarEvent1 = new CalendarEvent(57493728710L, "Daily Standup", LocalDateTime.of(2022, 07, 21, 9, 0, 0), 15, "Meeting Room1");
 		try {
-    	calendarEvents = new ArrayList<CalendarEvent>(Arrays.asList(calendarEvent1));
+			calendarEvents = new ArrayList<CalendarEvent>(Arrays.asList(calendarEvent1));
 			return calendarEvents;
 		}
 		catch(Exception e) {
