@@ -25,62 +25,62 @@ import com.calendareventapimavenjavaspring.calendareventapimavenjavaspringparent
 @RequestMapping("/v1")
 public class CalendarResource {
 
-  @Autowired
-  private CalendarService calendarService;
+	@Autowired
+	private CalendarService calendarService;
 
-  @GetMapping("/")
-  public String sayHello() {
-    return "Welcome to the Calendar REST API!";
-  }
+	@GetMapping("/")
+	public String sayHello() {
+		return "Welcome to the Calendar REST API!";
+	}
 
-  @GetMapping("/calendars/{id}")
-  public Calendar retrieveCalendar(@PathVariable long id) throws CalendarNotFoundException
-  {
-    Calendar calendar = calendarService.retrieveCalendar(id);
-    if(calendar == null)
-    {
-      throw new CalendarNotFoundException("id->" + id);
-    }
-    else
-    {
-      return calendar;
-    }
-  }
+	@GetMapping("/calendars/{id}")
+	public Calendar retrieveCalendar(@PathVariable long id) throws CalendarNotFoundException
+	{
+		Calendar calendar = calendarService.retrieveCalendar(id);
+		if(calendar == null)
+		{
+			throw new CalendarNotFoundException("id->" + id);
+		}
+		else
+		{
+			return calendar;
+		}
+	}
 
-  @GetMapping("/calendars")
-  public List<Calendar> retrieveAllCalendars() {
-    return calendarService.retrieveAllCalendars();
-  }
+	@GetMapping("/calendars")
+	public List<Calendar> retrieveAllCalendars() {
+		return calendarService.retrieveAllCalendars();
+	}
 
-  @PostMapping(value = "/calendars/add")
-  public Calendar addCalendar(@RequestBody Calendar calendar) throws InvalidRequestException
-  {
-    if(/*calendar.getUser() */ calendar != null)
-    {
-      return calendarService.addCalendar(calendar);
-    }
-    else
-    {
-      throw new InvalidRequestException("Provide user details to create a calendar.");
-    }
-  }
+	@PostMapping(value = "/calendars/add")
+	public Calendar addCalendar(@RequestBody Calendar calendar) throws InvalidRequestException
+	{
+		if(/*calendar.getUser() */ calendar != null)
+		{
+			return calendarService.addCalendar(calendar);
+		}
+		else
+		{
+			throw new InvalidRequestException("Provide user details to create a calendar.");
+		}
+	}
 
-  @PutMapping(value = "/calendars/update")
-  public Calendar updateCalendar(@RequestBody Calendar calendar) throws InvalidRequestException
-  {
-    Calendar updated = calendarService.updateCalendar(calendar);
-    if(updated != null)
-    {
-      return updated;
-    }
-    else
-    {
-      throw new CalendarNotFoundException("id->" + calendar.getId());
-    }
-  }
+	@PutMapping(value = "/calendars/update")
+	public Calendar updateCalendar(@RequestBody Calendar calendar) throws InvalidRequestException
+	{
+		Calendar updated = calendarService.updateCalendar(calendar);
+		if(updated != null)
+		{
+			return updated;
+		}
+		else
+		{
+			throw new CalendarNotFoundException("id->" + calendar.getId());
+		}
+	}
 
-  @DeleteMapping(value = "/calendars/delete")
-  public void deleteCalendar(@RequestBody Calendar calendar) {
-    calendarService.deleteCalendar(calendar);
-  }
+	@DeleteMapping(value = "/calendars/delete")
+	public void deleteCalendar(@RequestBody Calendar calendar) {
+		calendarService.deleteCalendar(calendar);
+	}
 }

@@ -4,10 +4,10 @@ public class InvalidRequestException extends RuntimeException {
   /**
    * 
    */
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  public InvalidRequestException(String exception) {
-      super(exception);
-    }
+	public InvalidRequestException(String exception) {
+		super(exception);
+	}
 }
 

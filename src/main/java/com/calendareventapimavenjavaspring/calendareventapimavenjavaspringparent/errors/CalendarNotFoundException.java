@@ -8,10 +8,10 @@ public class CalendarNotFoundException extends RuntimeException {
   /**
    * 
    */
-  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-  public CalendarNotFoundException(String exception) {
-      super(exception);
-    }
+	public CalendarNotFoundException(String exception) {
+  	super(exception);
+	}
 }
 
