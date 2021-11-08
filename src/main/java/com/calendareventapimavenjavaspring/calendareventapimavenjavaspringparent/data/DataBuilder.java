@@ -20,7 +20,7 @@ public class DataBuilder {
 	ArrayList<Calendar> calendars;
 	ArrayList<CalendarEvent> calendarEvents;
 
-  public ArrayList<Calendar> createCalendar() {
+	public ArrayList<Calendar> createCalendar() {
 		Calendar calendar1 = new Calendar(12345678910L, "Calendar1");
 		try {
 			calendars = new ArrayList<Calendar>(Arrays.asList(calendar1));
