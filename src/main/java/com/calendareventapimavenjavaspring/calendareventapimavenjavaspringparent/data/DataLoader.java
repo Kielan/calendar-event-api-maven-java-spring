@@ -24,7 +24,7 @@ public class DataLoader implements CommandLineRunner {
 	private CalendarEventRepository calendarEventRepository;
 	
 	@Override
-	public void run(String... arg0) throws Exception {
+	public void run(String... arg0) {
 		
 		log.debug("Loading test data...");
 		dataBuilder.createCalendar().forEach(event -> calendarRepository.save(event));
