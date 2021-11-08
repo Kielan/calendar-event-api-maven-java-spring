@@ -1,4 +1,4 @@
-####Reference Spring MVC app.
+#### Reference Spring MVC app.
 
 Technologies used:
 
@@ -6,7 +6,7 @@ Technologies used:
 
     Spring Data JPA
 
-####To Run
+#### To Run
 mvn clean install -U
 
 mvn compile
